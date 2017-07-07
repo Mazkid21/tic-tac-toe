@@ -1,0 +1,20 @@
+body {
+	background-color: grey;
+}
+
+.head {
+	background-color: rgba(219, 126, 126, 0.57);
+}
+
+table {
+  width: 100%;
+ 
+  border-collapse: collapse;
+  border-style: hidden;
+}
+td {
+	height: 30px;
+	border: 1px solid pink;
+
+
+}
