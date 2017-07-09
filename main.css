@@ -18,3 +18,16 @@ td {
 
 
 }
+
+.X {
+	background-color: red;
+}
+
+.O {
+	background-color: blue;
+
+}
+
+.N {
+	background-color: grey;
+}
