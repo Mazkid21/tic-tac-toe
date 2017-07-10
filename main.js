@@ -38,6 +38,8 @@
 var X = "X";
 var O = "O";
 var moves = 0; 
+var winCombos = [[1,2,3],[4,5,6],[7,8,9],
+[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
 
 $(".gameBoard").on("click", function () {
 	moves++;
@@ -47,7 +49,48 @@ $(".gameBoard").on("click", function () {
 	}
 
 	else { $(this).addClass(O);
+
 }
+// for each winning combo then alert ("o wins!")
+// do another for "x"
+  
+ $(function(){
+	if ( $("#box1").hasClass("O") && $("#box2").hasClass("O") &&  $("#box3").hasClass("O") || 
+		$("#box4").hasClass("O") && $("#box5").hasClass("O") &&  $("#box6").hasClass("O") || 
+		$("#box7").hasClass("O") && $("#box8").hasClass("O") &&  $("#box9").hasClass("O") ||
+		$("#box1").hasClass("O") && $("#box4").hasClass("O") &&  $("#box7").hasClass("O") ||
+		$("#box2").hasClass("O") && $("#box5").hasClass("O") &&  $("#box8").hasClass("O") ||
+		$("#box3").hasClass("O") && $("#box6").hasClass("O") &&  $("#box9").hasClass("O") ||
+		$("#box1").hasClass("O") && $("#box5").hasClass("O") &&  $("#box9").hasClass("O") ||
+		$("#box3").hasClass("O") && $("#box5").hasClass("O") &&  $("#box7").hasClass("O")) 
+	{
+ 		return alert("O Wins!!");
+	 }
+
+	 if ( $("#box1").hasClass("X") && $("#box2").hasClass("X") &&  $("#box3").hasClass("X") || 
+		 $("#box4").hasClass("X") && $("#box5").hasClass("X") &&  $("#box6").hasClass("X") || 
+		 $("#box7").hasClass("X") && $("#box8").hasClass("X") &&  $("#box9").hasClass("X") ||
+		 $("#box1").hasClass("X") && $("#box4").hasClass("X") &&  $("#box7").hasClass("X") ||
+		 $("#box2").hasClass("X") && $("#box5").hasClass("X") &&  $("#box8").hasClass("X") ||
+		 $("#box3").hasClass("X") && $("#box6").hasClass("X") &&  $("#box9").hasClass("X") ||
+		 $("#box1").hasClass("X") && $("#box5").hasClass("X") &&  $("#box9").hasClass("X") ||
+		 $("#box3").hasClass("X") && $("#box5").hasClass("X") &&  $("#box7").hasClass("X")) 
+	{
+ 	return alert("X Wins!!");
+	 }
+
+	 else {
+	 	 alert("It's a Draw!!");
+	 }
+});
+
+// $(function(){
+// 	if ( $("#box3").hasClass("gameBoard", "o") && $("#box4").hasClass("gameBoard", "o") &&  $("#box5").hasClass("gameBoard", "o")) {
+// 		console.log("Yay2!!!");
+// 	}
+
+// });
 
 
 });
+
