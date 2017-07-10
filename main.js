@@ -53,8 +53,7 @@ $(".gameBoard").on("click", function () {
 }
 // for each winning combo then alert ("o wins!")
 // do another for "x"
-  
- $(function(){
+ 
 	if ( $("#box1").hasClass("O") && $("#box2").hasClass("O") &&  $("#box3").hasClass("O") || 
 		$("#box4").hasClass("O") && $("#box5").hasClass("O") &&  $("#box6").hasClass("O") || 
 		$("#box7").hasClass("O") && $("#box8").hasClass("O") &&  $("#box9").hasClass("O") ||
@@ -64,7 +63,7 @@ $(".gameBoard").on("click", function () {
 		$("#box1").hasClass("O") && $("#box5").hasClass("O") &&  $("#box9").hasClass("O") ||
 		$("#box3").hasClass("O") && $("#box5").hasClass("O") &&  $("#box7").hasClass("O")) 
 	{
- 		return alert("O Wins!!");
+ 		return alert("Black Wins!!");
 	 }
 
 	 if ( $("#box1").hasClass("X") && $("#box2").hasClass("X") &&  $("#box3").hasClass("X") || 
@@ -76,13 +75,14 @@ $(".gameBoard").on("click", function () {
 		 $("#box1").hasClass("X") && $("#box5").hasClass("X") &&  $("#box9").hasClass("X") ||
 		 $("#box3").hasClass("X") && $("#box5").hasClass("X") &&  $("#box7").hasClass("X")) 
 	{
- 	return alert("X Wins!!");
+ 	return alert("White Wins!!");
 	 }
 
-	 else {
-	 	 alert("It's a Draw!!");
+	 if (moves === 9)
+	 {
+	 	return alert("It's a Draw!!");
 	 }
-});
+
 
 // $(function(){
 // 	if ( $("#box3").hasClass("gameBoard", "o") && $("#box4").hasClass("gameBoard", "o") &&  $("#box5").hasClass("gameBoard", "o")) {
@@ -92,5 +92,10 @@ $(".gameBoard").on("click", function () {
 // });
 
 
+});
+
+
+$(".reset").on("click", function () {
+	$(".gameBoard").removeClass("X O");
 });
 
