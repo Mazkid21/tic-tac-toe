@@ -41,10 +41,10 @@ var moves = 0;
 var winCombos = [[1,2,3],[4,5,6],[7,8,9],
 [1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
 
-$(".gameBoard").on("click", function () {
+ var game = $(".gameBoard").one("click", function () {
 	moves++;
 
-	if (moves%2 === 0) {
+	if (moves%2 === 0 && $('td').hasClass("gameBoard")) {
 		$(this).addClass(X);
 	}
 
@@ -75,6 +75,7 @@ $(".gameBoard").on("click", function () {
 		 $("#box1").hasClass("X") && $("#box5").hasClass("X") &&  $("#box9").hasClass("X") ||
 		 $("#box3").hasClass("X") && $("#box5").hasClass("X") &&  $("#box7").hasClass("X")) 
 	{
+	
  	return alert("White Wins!!");
 	 }
 
@@ -96,6 +97,11 @@ $(".gameBoard").on("click", function () {
 
 
 $(".reset").on("click", function () {
-	$(".gameBoard").removeClass("X O");
+	
+	location.reload();
+	// $(".gameBoard").removeClass("X O");
+
+
+
 });
 
